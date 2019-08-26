@@ -1,7 +1,7 @@
 # Primzahlengenerator
 Das in Python geschriebene Programm dient zur Erforschung von Primzahlen. Das Tool ist sehr flexibel gehalten. Es steht ein interaktiver Modus zur Verfügung. Die Steuerung kann auch über die Kommandozeile erfolgen.
 
-![Mit dem Parameter "-h" bekommt man Hilfe angezeigt](https://github.com/pittermann/Primzahlengenerator/edit/master/primzahlen_help.jpg)
+![Mit dem Parameter "-h" bekommt man Hilfe angezeigt](https://github.com/pittermann/Primzahlengenerator/blob/master/primzahlen_help.jpg)
 
 Um im den interaktiven Modus zu gelangen, genügt die Eingabe von: python primzahlen.py.
 Hilfe bekommt man mit python primzahlen.py -h
