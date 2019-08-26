@@ -63,6 +63,7 @@ def ausgabe_ergebnis():
     printf( '\n\nListe der natuerlichen Zahlen bis: \t ' + ergebnis + '%s\n' + ohnefarbe, format_int(hoechstwert))
     printf( 'Gefundene Primzahlen: \t\t\t ' + ergebnis + '%d\n' + ohnefarbe, (menge - 1))
     printf( 'Es ist jede \t\t\t\t ' + ergebnis + "%2f" + ohnefarbe + ' Zahl eine Primzahl\n', float(hoechstwert) / float(menge))
+    printf( 'Blockgroesse: \t\t\t\t ' + ergebnis + '%d\n' + ohnefarbe, (blockgroesse))
     printf( 'Dauer der Untersuchung: \t\t ' + ergebnis + '%.4f ' + ohnefarbe + 'Sekunden\n', float(endezeit - startzeit))
 
 # 'Clearen' des Bildschirms
@@ -139,31 +140,31 @@ def abbruch():
     printf("                                   1 = Anzeige fuehrender Nullen\n")
     printf("                                     1 = Leerzeichen (0 = Nullen)\n")
     printf("                                       0: Bildschirmausgabe\n")
-    printf("                                       1: primzahlen.dat im akt.\n")
-    printf("                                          Verzeichnis anlegen\n)")
-    printf("                                           0 = Quersumme nicht anzeigen (1 = anzeigen)\n)")
+    printf("                                       1: primzahlen.dat im akt. Verz. anlegen\n")
+    printf("                                           0 = Quersumme nicht anzeigen (1 = anzeigen)\n")
     printf(c.END)
 
 
 # Los geht's
 def main():
-    global menge, hoechstwert, startzeit, endezeit, dauer
+    global blockgroesse, menge, hoechstwert, startzeit, endezeit, dauer
     menge = 1
     querSum = ''
     schreibindatei = False
     zeigQuersumme = False
     trennzeichen = ''
     blockgroesse = 10
-    # Nur wenn alle Argumente uebergeben werden
-    #print "This is the name of the script: ", sys.argv[0]
-    #print "Number of arguments: ", len(sys.argv)
-    #print "The arguments are: " , str(sys.argv)
+
+    # -h ist das erste Argument, dann will der Anwender eine Hilfe angezeigt bekommen
     hilfe = str(sys.argv[1:])
+
+    # Anstatt alle Parameter zu uebergeben, benoetigt der Anwender Hilfe 
     if (hilfe.find('-h') > 0) or (hilfe.find('--h') > 0):
         clear()
         abbruch()
         sys.exit(0)
 
+    # Es werden genuegend Parameter uebergeben
     if len(sys.argv) == 10:
         try:
             hoechstwert = int(sys.argv[1])      # Zahl
@@ -212,10 +213,13 @@ def main():
             # Den eingegebenen Hoechstwert in eine Zeichenkette umwandeln und die Laenge des Strings merken
             hoechstwertlaenge = len(str(hoechstwert))
 
+        # Wenn alles schief geht ...
         except Exception:
             clear()
             abbruch()
             sys.exit(0)
+
+    # Keine -h fuer Hilfe uebergeben und auch nicht die Anzahl der benoetigten Parameter, also startet das Programm den interaktiven Modus
     else:
         ################################################################################################
         # los geht's mit der Abfrage ...
@@ -243,6 +247,7 @@ def main():
         # Frage nach einem Hoechstwert bis zu dem gesucht werden soll
         try:
             hoechstwert = int(input('\nBis zu welcher natuerlichen Zahl sollen die Primzahlen errechnet werden (default: 1000)? '))
+        # gibt der Anwender Muell ein, wird der Defaultwert von 1000 verwendet - nicht elegant, funktioniert aber
         except ValueError:
             hoechstwert = 1000
 
@@ -284,6 +289,13 @@ def main():
                     zeigleer = True
                 else:
                     zeigleer = False
+            # Quersumme anzeigen?
+            myQuersumme = input('\nQuersumme mit ausgeben? (J/n)?')
+            if myQuersumme in ['n', 'N']:
+                zeigQuersumme = False
+            else:
+                zeigQuersumme = True
+
 
 
             schreiben = input('\nDie Primzahlen in eine Datei schreiben statt auf dem Bildschirm auszugeben? (j/N)?')
@@ -429,7 +441,6 @@ def main():
         plt.xlabel('Eingegebener Hoechstwert: ' + str(hoechstwert), fontsize = 18, color='blue')
         #plt.axis([0, hoechstwert, 0, menge])
         plt.axis([0, hoechstwert, 0, hoechstwert])
-
         plt.grid(True)
         plt.show()
     return 0
