@@ -1,7 +1,7 @@
 # Primzahlengenerator
 Das in Python geschriebene Programm dient zur Erforschung von Primzahlen. Das Tool ist sehr flexibel gehalten. Es steht ein interaktiver Modus zur Verfügung. Die Steuerung kann auch über die Kommandozeile erfolgen.
 
-![Mit dem Parameter "-h" bekommt man Hilfe angezeigt](https://github.com/pittermann/Primzahlengenerator/blob/master/primzahlen_help.jpg)
+![Mit dem Parameter "-h" bekommt man Hilfe angezeigt](https://github.com/pittermann/Primzahlengenerator/blob/master/images/primzahlen_help.jpg)
 
 Getestet wurde das Programm unter Kali Linux, Python Version 3.6.5, und unter Windows 10, Python Version 3.7.3.
 
@@ -38,5 +38,5 @@ Sollen die gefundenen Primzahlen angezeigt werden, oder nur das Endergebnis.1 = 
 
 ## Grafische Anzeige
 Python bietet extrem mächtige Befehle zur Erzeugung von Visualisierungen. Deswegen war es keine Kunst, zur Ausgabe der Werte auch die grafische Darstellung der Fundstellen zu schreiben.
-![Die Visualisierung ist ruckzuck geschrieben](https://github.com/pittermann/Primzahlengenerator/blob/master/primzahlen_graphic.jpg)
+![Die Visualisierung ist ruckzuck geschrieben](https://github.com/pittermann/Primzahlengenerator/blob/master/images/primzahlen_graphic.jpg)
 
