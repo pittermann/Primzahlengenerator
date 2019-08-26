@@ -3,6 +3,8 @@ Das in Python geschriebene Programm dient zur Erforschung von Primzahlen. Das To
 
 ![Mit dem Parameter "-h" bekommt man Hilfe angezeigt](https://github.com/pittermann/Primzahlengenerator/blob/master/primzahlen_help.jpg)
 
+Getestet wurde das Programm unter Kali Linux, Python Version 3.6.5, und unter Windows 10, Python Version 3.7.3.
+
 Um im den interaktiven Modus zu gelangen, genügt die Eingabe von: python primzahlen.py.
 Hilfe bekommt man mit python primzahlen.py -h
 
