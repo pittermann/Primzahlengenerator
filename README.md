@@ -14,8 +14,6 @@ Die Zahl, bis zu der Primzahlen gesucht werden sollen
 	0 = Es erfolgt keine grafische Ausgabe der gefundenen Zahlen, 
 	1 = die Primzahlen sollen grafisch dargestellt werden
 
-
-
 3. Parameter
 Sollen die gefundenen Primzahlen angezeigt werden, oder nur das Endergebnis.1 = Anzeigen aller ermittelter Primzahlen
 
