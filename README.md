@@ -34,4 +34,7 @@ Sollen die gefundenen Primzahlen angezeigt werden, oder nur das Endergebnis.1 = 
 0: Bildschirmausgabe
 1: primzahlen.dat im akt.Verzeichnis anlegen
 
+## Grafische Anzeige
+Python bietet extrem mächtige Befehle zur Erzeugung von Visualisierungen. Deswegen war es keine Kunst, zur Ausgabe der Werte auch die grafische Darstellung der Fundstellen zu schreiben.
+![Die Visualisierung ist ruckzuck geschrieben](https://github.com/pittermann/Primzahlengenerator/blob/master/primzahlen_graphic.jpg)
 
